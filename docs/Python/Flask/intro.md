@@ -97,3 +97,32 @@ FLASK_APP=microblog.py
 
 Now, when you run flask run, Flask will automatically read the .flaskenv file and apply the environment variables, simplifying your workflow.
 
+### Housekeeping
+
+**Add a .gitignore and a requirements.txt**
+
+**requirements.txt**: 
+
+This file will list all the dependencies your project is using, 
+making it easier to replicate the environment later or share it with others. 
+
+To generate it:
+
+`(venv) $ pip freeze > requirements.txt
+`
+This will store the current packages installed in your virtual environment (like Flask, python-dotenv, etc.) in requirements.txt
+, which others can install using:
+
+`$ pip install -r requirements.txt
+`
+**gitignore:** 
+
+This file will prevent sensitive or unnecessary files (like your venv directory) from being tracked in version control. 
+
+Common items to add to .gitignore for a Flask project include:
+
+`venv/
+*.pyc
+__pycache__/
+.flaskenv
+`
